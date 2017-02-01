@@ -8099,7 +8099,7 @@ header #logo {
 .top-item {
   display: block;
   float: right;
-  margin: 12px 11px 0 0;
+  margin: 18px 11px 0 0;
   background-color: #333333;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -8402,7 +8402,7 @@ nav > div {
 }
 #search-bar #search-form-wrapper form {
   position: relative;
-  margin: 12px 0 0 0;
+  margin: 18px 0 0 0;
   width: 300px;
 }
 #search-bar #search-form-wrapper input {
