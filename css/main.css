@@ -8125,7 +8125,7 @@ button.top-dropdown:active {
 .open > button.top-dropdown,
 button.top-dropdown:hover,
 button.top-dropdown:focus {
-  background-color: #00c7c8 !important;
+  background-color: #0077c8 !important;
   background-image: url(../images/white-arrow.png);
   color: #ffffff;
 }
@@ -8198,7 +8198,7 @@ nav > div {
   line-height: 24px;
 }
 .top-dropdown-container .top-dropdown-body ul a:hover {
-  color: #00c7c8;
+  color: #0077c8;
 }
 .top-dropdown-container .top-dropdown-bottom {
   background-color: #ffffff;
@@ -8329,7 +8329,7 @@ nav > div {
 #manage-menu > button:focus,
 #add-menu > button:focus,
 #clipboard-menu > button:focus {
-  background-color: #00c7c8;
+  background-color: #0077c8;
 }
 #quick-links-menu.open > button:before,
 #language-menu.open > button:before,
