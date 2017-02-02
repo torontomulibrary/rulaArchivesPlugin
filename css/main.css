@@ -8421,7 +8421,7 @@ nav > div {
 #search-bar #search-form-wrapper input:focus::-webkit-input-placeholder {
   color: #999999;
 }
-#search-bar #search-form-wrapper button {
+#search-bar #search-form-wrapper button.btn {
   position: absolute;
   top: 0;
   right: 0;
@@ -8437,11 +8437,11 @@ nav > div {
   -moz-border-radius: 0;
   border-radius: 0;
 }
-#search-bar #search-form-wrapper button:before {
+#search-bar #search-form-wrapper button.btn:before {
   font-family: FontAwesome;
   content: "\f002";
 }
-#search-bar #search-form-wrapper button span {
+#search-bar #search-form-wrapper button.btn span {
   display: none;
 }
 @media (max-width: 979px) {
