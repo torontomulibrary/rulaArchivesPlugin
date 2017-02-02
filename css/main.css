@@ -8117,7 +8117,7 @@ header #logo {
 button.top-dropdown:link,
 button.top-dropdown:visited,
 button.top-dropdown:active {
-  padding: 5px 29px 6px 17px;
+  padding: 5px 29px 5px 17px;
   background-image: url(../images/gray-arrow.png);
   background-position: right center;
   background-repeat: no-repeat;
@@ -8395,20 +8395,18 @@ nav > div {
 #search-bar #search-form-wrapper form {
   position: relative;
   margin: 0;
-  width: 300px;
+  width: 100%;
 }
 #search-bar #search-form-wrapper input {
   border: none;
+  margin: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
   background-color: #333333;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
   color: #bbbbbb;
   width: 100%;
-  min-height: 0;
-  margin-bottom: 0;
-  padding: 0 8px;
-  height: 25px;
+  padding: 0 15px;
 }
 #search-bar #search-form-wrapper input:focus {
   background-color: #f8f8f8;
@@ -8427,9 +8425,6 @@ nav > div {
   display: block;
   width: 25px;
   height: 25px;
-  right: 0px;
-  position: absolute;
-  top: 0px;
   background-color: #666;
   color: white;
   margin-top: 0px;

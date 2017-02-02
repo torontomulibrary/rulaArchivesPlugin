@@ -75,7 +75,7 @@ header #logo {
 button.top-dropdown:link,
 button.top-dropdown:visited,
 button.top-dropdown:active {
-  padding: 5px 29px 6px 17px;
+  padding: 5px 29px 5px 17px;
   background-image: url(../../images/gray-arrow.png);
   background-position: right center;
   background-repeat: no-repeat;
@@ -356,29 +356,22 @@ nav > div {
   form {
     position: relative; // Positionate search autocomplete
     margin: 0;
-    width: 300px;
+    width: 100%;
   }
 
   input {
-
-    // Reset border
+    // Reset borders and margin
     border: none;
+    margin: 0;
+    .border-radius(0);
 
     // See .top-item
     background-color: @grayDark;
-    .border-radius(4px);
     color: lighten(@gray, 40%);
 
     // Overrides defaults for [type=text]
-    // Some of this default like box-model are set by AtoM, not only Bootstrap
     width: 100%;
-    min-height: 0;
-    margin-bottom: 0;
-    // .box-sizing(content-box);
-
-    // Define height (box-model is content-box here)
-    padding: 0 8px;
-    height: 25px;
+    padding: 0 15px;
 
     &:focus {
       background-color: @graySilver;
@@ -392,9 +385,6 @@ nav > div {
     display: block;
     width: 25px;
     height: 25px;
-    right: 0px;
-    position: absolute;
-    top: 0px;
     background-color: #666;
     color: white;
     margin-top: 0px;
