@@ -7894,7 +7894,7 @@ h1 .count {
   position: absolute;
   left: 0;
   right: 0;
-  top: 25px;
+  top: 30px;
   z-index: 1010;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -8435,9 +8435,9 @@ nav > div {
   margin-top: 0px;
   font-size: 1.1em;
   border: none;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important;
 }
 #search-bar #search-form-wrapper button.btn:before {
   font-family: FontAwesome;
