@@ -8400,9 +8400,9 @@ nav > div {
 #search-bar #search-form-wrapper input {
   border: none;
   margin: 0;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important;
   background-color: #333333;
   color: #bbbbbb;
   width: 100%;
@@ -8435,9 +8435,9 @@ nav > div {
   margin-top: 0px;
   font-size: 1.1em;
   border: none;
-  -webkit-border-radius: 0 !important;
-  -moz-border-radius: 0 !important;
-  border-radius: 0 !important;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
 }
 #search-bar #search-form-wrapper button.btn:before {
   font-family: FontAwesome;
