@@ -8067,6 +8067,16 @@ h1 .count {
 #top-bar {
   height: 60px;
   background-color: #000000;
+  *zoom: 1;
+}
+#top-bar:before,
+#top-bar:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+#top-bar:after {
+  clear: both;
 }
 header #logo {
   display: block;
