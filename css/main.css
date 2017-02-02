@@ -8207,8 +8207,11 @@ nav > div {
   padding: 4px 8px;
   line-height: 24px;
 }
-.top-dropdown-container .top-dropdown-body ul a:hover {
-  color: #0077c8;
+.top-dropdown-container .top-dropdown-body ul li:hover {
+  background: #0077c8;
+}
+.top-dropdown-container .top-dropdown-body ul li:hover a {
+  color: #ffffff;
 }
 .top-dropdown-container .top-dropdown-bottom {
   background-color: #ffffff;
