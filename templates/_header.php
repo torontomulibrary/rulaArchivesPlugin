@@ -13,7 +13,7 @@
   <?php endif; ?>
 
   <?php if (sfConfig::get('app_toggleTitle')): ?>
-    <h1 id="site-name">
+    <h1 id="site-name" class="hidden-tablet hidden-phone">
       <?php echo link_to('<span>'.esc_specialchars(sfConfig::get('app_siteTitle')).'</span>', '@homepage', array('rel' => 'home', 'title' => __('Home'))) ?>
     </h1>
   <?php endif; ?>
