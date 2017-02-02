@@ -8422,6 +8422,9 @@ nav > div {
   color: #999999;
 }
 #search-bar #search-form-wrapper button {
+  position: absolute;
+  top: 0;
+  right: 0;
   display: block;
   width: 25px;
   height: 25px;
