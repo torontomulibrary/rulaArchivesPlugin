@@ -55,8 +55,10 @@
 <div id="search-bar">
   <div class="container">
     <div class="row">
-      <?php echo get_component('menu', 'browseMenu', array('sf_cache_key' => $sf_user->getCulture().$sf_user->getUserID())) ?>
-      <?php echo get_component('search', 'box') ?>
+      <div class="span12">
+        <?php echo get_component('menu', 'browseMenu', array('sf_cache_key' => $sf_user->getCulture().$sf_user->getUserID())) ?>
+        <?php echo get_component('search', 'box') ?>
+      </div>
     </div>
   </div>
 </div>
