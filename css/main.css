@@ -8426,16 +8426,16 @@ nav > div {
   top: 0;
   right: 0;
   display: block;
-  width: 25px;
-  height: 25px;
-  background-color: #666;
+  width: 30px;
+  height: 30px;
+  background-color: #4d4d4d;
   color: white;
   margin-top: 0px;
   font-size: 1.1em;
   border: none;
-  -webkit-border-radius: 0 4px 4px 0;
-  -moz-border-radius: 0 4px 4px 0;
-  border-radius: 0 4px 4px 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
 }
 #search-bar #search-form-wrapper button:before {
   font-family: FontAwesome;
