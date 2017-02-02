@@ -8105,9 +8105,6 @@ header #logo {
   float: right;
   margin: 18px 11px 0 0;
   background-color: #333333;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
   font-size: 13px;
   line-height: 14px;
   text-decoration: none;
