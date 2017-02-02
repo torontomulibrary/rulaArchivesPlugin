@@ -8470,30 +8470,6 @@ nav > div {
     background-image: none;
   }
 }
-@media (max-width: 480px) {
-  #browse-menu {
-    width: 3%;
-  }
-  #browse-menu > a {
-    text-indent: -9999px;
-  }
-  nav {
-    clear: both;
-  }
-  #search-bar {
-    margin-bottom: 10px;
-  }
-  nav > div.open {
-    float: none;
-    clear: both;
-  }
-  nav > div .top-dropdown-container {
-    clear: both;
-    float: none;
-    left: 0;
-    right: 0;
-  }
-}
 /*
  * This file is part of the Access to Memory (AtoM) software.
  *
