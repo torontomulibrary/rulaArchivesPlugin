@@ -10,10 +10,10 @@
       <input type="text" name="query"<?php if (isset($sf_request->query)) echo ' class="focused"' ?> value="<?php echo $sf_request->query ?>" placeholder="<?php echo __('Search') ?>"/>
     <?php endif; ?>
 
-    <button class="btn dropdown-toggle" data-toggle="dropdown">
+    <button class="btn">
       <span class="caret"></span>
     </button>
-    
+
     <div class="btn-group">
       <?php $cacheKey = 'search-box-nav-'.$sf_user->getCulture() ?>
       <?php if (!cache($cacheKey)): ?>
