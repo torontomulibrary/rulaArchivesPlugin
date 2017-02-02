@@ -8387,17 +8387,14 @@ nav > div {
 #search-bar {
   white-space: nowrap;
   position: relative;
-  margin-top: 15px;
+  margin: 15px 0;
 }
 #search-bar > div {
   position: relative;
 }
-#search-bar #search-form-wrapper h2 {
-  display: none;
-}
 #search-bar #search-form-wrapper form {
   position: relative;
-  margin: 18px 0 0 0;
+  margin: 0;
   width: 300px;
 }
 #search-bar #search-form-wrapper input {
