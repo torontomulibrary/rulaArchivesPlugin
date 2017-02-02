@@ -8394,9 +8394,6 @@ nav > div {
 #search-bar > div {
   position: relative;
 }
-#search-bar > div {
-  float: left;
-}
 #search-bar #search-form-wrapper h2 {
   display: none;
 }
