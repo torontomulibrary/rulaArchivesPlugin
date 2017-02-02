@@ -8447,58 +8447,12 @@ nav > div {
   display: none;
 }
 @media (max-width: 979px) {
-  #top-bar {
-    height: 150px;
-  }
   nav {
     clear: both;
   }
   #logo {
     float: none;
     text-align: center;
-  }
-  #search-bar {
-    *zoom: 1;
-    margin: 0 auto;
-    padding: 0 20px;
-    clear: both;
-  }
-  #search-bar:before,
-  #search-bar:after {
-    display: table;
-    content: "";
-    line-height: 0;
-  }
-  #search-bar:after {
-    clear: both;
-  }
-  #search-bar #search-form-wrapper {
-    width: 80%;
-    float: left;
-  }
-  #search-bar #search-form-wrapper form {
-    width: auto;
-    margin-right: 0;
-  }
-  #search-bar #search-form-wrapper input {
-    display: block;
-    width: 100%;
-    min-height: 30px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    min-height: 25px;
-  }
-  #search-bar #browse-menu {
-    width: 20%;
-  }
-  #search-bar #browse-menu > a {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 100%;
-    margin-right: 0px;
-    float: left;
   }
 }
 @media (max-width: 767px) {
