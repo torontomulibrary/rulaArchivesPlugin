@@ -6410,6 +6410,7 @@ div#content > table.table {
 }
 .facet li a {
   display: inline-block;
+  vertical-align: middle;
   width: 85%;
   overflow: hidden;
   text-overflow: ellipsis;
