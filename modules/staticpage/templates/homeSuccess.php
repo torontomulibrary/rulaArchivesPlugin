@@ -22,9 +22,7 @@
   <?php echo get_component('default', 'popular', array('limit' => 10, 'sf_cache_key' => $sf_user->getCulture())) ?>
 <?php end_slot() ?>
 
-<div class="page">
-  <?php echo render_value($sf_data->getRaw('content')) ?>
-</div>
+<?php echo render_value($sf_data->getRaw('content')) ?>
 
 <?php if (QubitAcl::check($resource, 'update')): ?>
   <?php slot('after-content') ?>
