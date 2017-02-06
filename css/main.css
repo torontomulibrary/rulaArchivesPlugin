@@ -6405,11 +6405,11 @@ div#content > table.table {
   margin-bottom: 0;
 }
 .facet li {
-  padding: 1px 5px;
   position: relative;
 }
 .facet li a {
   display: inline-block;
+  padding: 2px 5px;
   vertical-align: middle;
   width: 85%;
   overflow: hidden;
