@@ -14,8 +14,6 @@
       </ul>
     </div>
 
-    <div class="top-dropdown-bottom"></div>
-
   </div>
 
 </div>
