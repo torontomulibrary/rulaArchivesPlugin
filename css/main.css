@@ -6431,7 +6431,7 @@ div#content > table.table {
   text-decoration: underline;
 }
 .facet .facet-count {
-  padding-left: 2px 5px;
+  padding: 2px 5px;
   position: absolute;
   right: 0;
 }
