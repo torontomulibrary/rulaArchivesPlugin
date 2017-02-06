@@ -9592,6 +9592,9 @@ html.js .js-hide {
 .open > .dropdown-menu {
   z-index: 10004;
 }
+.nav-tabs > li > a {
+  border-radius: none;
+}
 .home #content {
   background-color: initial;
   border: initial;
