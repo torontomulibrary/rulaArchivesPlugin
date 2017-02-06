@@ -9616,7 +9616,8 @@ html.js .js-hide {
   list-style: none;
   margin: initial;
 }
-#popular-this-week ul li {
+#popular-this-week ul li a {
+  display: block;
   padding: 3px 15px;
 }
 #popular-this-week ul li:hover {
