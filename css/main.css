@@ -9593,7 +9593,7 @@ html.js .js-hide {
   z-index: 10004;
 }
 .nav-tabs > li > a {
-  border-radius: none;
+  border-radius: 0;
 }
 .home #content {
   background-color: initial;
