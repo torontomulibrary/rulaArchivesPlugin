@@ -33,11 +33,3 @@
     </section>
   <?php end_slot() ?>
 <?php endif; ?>
-
-<!-- overriding CSS for homepage -->
-<style type="text/css">
-  .home #content {
-    background-color: initial;
-    border: initial;
-  }
-</style>
