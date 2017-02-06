@@ -6495,7 +6495,6 @@ div#content > table.table {
 }
 .repository-logo h2,
 .repository-logo img {
-  max-width: 220px;
   padding: 8px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
