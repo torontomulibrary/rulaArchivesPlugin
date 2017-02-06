@@ -7,8 +7,8 @@
 <?php slot('sidebar') ?>
 
   <?php echo get_component('menu', 'staticPagesMenu') ?>
-  
-  <section>
+
+  <?php /* <section>
     <h2><?php echo __('Browse by') ?></h2>
     <ul>
       <?php $browseMenu = QubitMenu::getById(QubitMenu::BROWSE_ID) ?>
@@ -18,7 +18,7 @@
         <?php endforeach; ?>
       <?php endif; ?>
     </ul>
-  </section>
+  </section> */ ?>
 
   <?php echo get_component('default', 'popular', array('limit' => 10, 'sf_cache_key' => $sf_user->getCulture())) ?>
 
