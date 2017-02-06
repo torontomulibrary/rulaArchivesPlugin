@@ -5988,6 +5988,9 @@ a.badge:focus {
 footer {
   min-height: 40px;
 }
+#wrapper {
+  padding-top: 10px;
+}
 .page {
   margin: 20px;
 }
@@ -9591,9 +9594,6 @@ html.js .js-hide {
 }
 .open > .dropdown-menu {
   z-index: 10004;
-}
-.home #wrapper {
-  padding-top: 10px;
 }
 .home #content {
   background-color: initial;
