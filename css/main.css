@@ -6405,11 +6405,15 @@ div#content > table.table {
   margin-bottom: 0;
 }
 .facet li {
-  padding: 2px 32px 2px 4px;
+  padding: 1px 5px;
+  position: relative;
+}
+.facet li a {
+  display: inline-block;
+  width: 85%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  position: relative;
 }
 .facet li a > span {
   position: absolute;
@@ -6418,6 +6422,9 @@ div#content > table.table {
   width: 1px;
   height: 1px;
   overflow: hidden;
+}
+.facet li:hover {
+  background-color: #dfdfdf;
 }
 .facet .active a {
   text-decoration: underline;

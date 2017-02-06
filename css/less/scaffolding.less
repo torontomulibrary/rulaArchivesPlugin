@@ -469,17 +469,26 @@ div#content > table.table {
   }
 
   li {
-    padding: 2px 32px 2px 4px;
-    .text-overflow();
+    padding: 1px 5px;
     position: relative;
 
-    a > span {
-      position: absolute;
-      left: -10000px;
-      top: auto;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
+    a {
+      display: inline-block;
+      width: 85%;
+      .text-overflow();
+
+      > span {
+        position: absolute;
+        left: -10000px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+    }
+
+    &:hover {
+      background-color: #dfdfdf;
     }
   }
 
