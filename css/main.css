@@ -9596,6 +9596,23 @@ html.js .js-hide {
   background-color: initial;
   border: initial;
 }
+#popular-this-week {
+  background-color: #eee;
+  padding-bottom: 15px;
+}
+#popular-this-week h2 {
+  background-color: #555555;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 15px;
+  line-height: 30px;
+  padding: 0 15px;
+}
+#popular-this-week ul {
+  list-style: none;
+  margin: initial;
+  padding: 0 15px;
+}
 @media print {
   /* Hide */
   #update-check,
