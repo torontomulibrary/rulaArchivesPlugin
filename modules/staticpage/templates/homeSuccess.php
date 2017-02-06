@@ -5,7 +5,6 @@
 <?php end_slot() ?>
 
 <?php slot('sidebar') ?>
-
   <?php echo get_component('menu', 'staticPagesMenu') ?>
 
   <?php /* <section>
@@ -21,7 +20,6 @@
   </section> */ ?>
 
   <?php echo get_component('default', 'popular', array('limit' => 10, 'sf_cache_key' => $sf_user->getCulture())) ?>
-
 <?php end_slot() ?>
 
 <div class="page">
