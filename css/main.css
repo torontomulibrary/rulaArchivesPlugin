@@ -9611,7 +9611,12 @@ html.js .js-hide {
 #popular-this-week ul {
   list-style: none;
   margin: initial;
-  padding: 0 15px;
+}
+#popular-this-week ul li {
+  padding: 3px 15px;
+}
+#popular-this-week ul li:hover {
+  background-color: #dfdfdf;
 }
 @media print {
   /* Hide */
