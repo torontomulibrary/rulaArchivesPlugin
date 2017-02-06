@@ -6431,9 +6431,9 @@ div#content > table.table {
   text-decoration: underline;
 }
 .facet .facet-count {
-  padding-left: 4px;
+  padding-left: 2px 5px;
   position: absolute;
-  right: 5px;
+  right: 0;
 }
 .facet-dates label,
 .facet-dates ul,
