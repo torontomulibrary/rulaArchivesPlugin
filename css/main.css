@@ -9598,7 +9598,7 @@ html.js .js-hide {
 }
 #popular-this-week {
   background-color: #eee;
-  padding-bottom: 15px;
+  padding-bottom: 5px;
 }
 #popular-this-week h2 {
   background-color: #555555;
@@ -9607,6 +9607,7 @@ html.js .js-hide {
   font-size: 15px;
   line-height: 30px;
   padding: 0 15px;
+  margin-bottom: 5px;
 }
 #popular-this-week ul {
   list-style: none;
