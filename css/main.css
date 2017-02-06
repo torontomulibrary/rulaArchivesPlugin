@@ -8138,8 +8138,8 @@ nav > div {
 .top-dropdown-container {
   display: none;
   position: absolute;
-  top: 37px;
-  right: 10px;
+  top: 47px;
+  right: 0;
   z-index: 1010;
   min-width: 240px;
   -webkit-box-shadow: 0 2px 2px rgba(25, 25, 25, 0.25);
