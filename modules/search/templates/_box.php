@@ -49,14 +49,21 @@
 
       <?php endif; ?>
 
+      <?php /* Rather than have the link pop up when search box is pressed, have it just show by default
       <div class="search-realm-advanced">
         <a href="<?php echo url_for(array('module' => 'informationobject', 'action' => 'browse', 'showAdvanced' => true, 'topLod' => false)) ?>">
           <?php echo __('Advanced search') ?>&nbsp;&raquo;
         </a>
       </div>
+      */ ?>
 
     </div>
 
   </form>
 
+  <p class="advanced-search-link">
+    <a href="<?php echo url_for(array('module' => 'informationobject', 'action' => 'browse', 'showAdvanced' => true, 'topLod' => false)) ?>">
+      <?php echo __('Advanced search') ?>
+    </a>
+  </p>
 </div>
