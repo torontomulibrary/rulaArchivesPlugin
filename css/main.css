@@ -5989,7 +5989,7 @@ footer {
   min-height: 40px;
 }
 #wrapper {
-  padding-top: 10px;
+  margin-top: -10px;
 }
 .page {
   margin: 20px;
@@ -9614,6 +9614,11 @@ html.js .js-hide {
 }
 #popular-this-week ul li:hover {
   background-color: #dfdfdf;
+}
+p.advanced-search-link {
+  margin: 5px 0 5px;
+  font-size: 12px;
+  text-align: right;
 }
 @media print {
   /* Hide */
