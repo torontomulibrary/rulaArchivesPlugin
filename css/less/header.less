@@ -15,29 +15,34 @@
  * along with Access to Memory (AtoM).  If not, see <http://www.gnu.org/licenses/>.
  */
 
-@topBarBackgroundColor: rgb(0, 0, 0);
-@topBarButtonHoverColor: rgb(0, 119, 200);
+@topBarBackgroundColor: rgb(22, 21, 20);
+@topBarButtonHoverColor: @orange;
 
 #top-bar {
   background-color: @topBarBackgroundColor;
-  .clearfix();
+
+  // Hack to always wrap the header content
+  // without disrupting themes extending this one.
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
 }
 
 header #logo {
   display: block;
   float: left;
-  margin: 0;
-  padding: 0 15px;
-  line-height: 55px;
+  margin: 0 20px 0 8px;
 }
 
 #site-name {
   margin: 0;
   float: left;
-  padding: 0 15px;
+  margin: 6px 0 0 4px;
+  padding-right: 35px;
   a {
     color: @white;
-    line-height: 60px;
   }
 }
 
@@ -57,8 +62,9 @@ header #logo {
 .top-item {
   display: block;
   float: right;
-  margin: 18px 11px 0 0;
+  margin: 12px 11px 0 0;
   background-color: @grayDark;
+  .border-radius(4px);
   font-size: 13px;
   line-height: 14px;
   text-decoration: none;
@@ -74,7 +80,7 @@ header #logo {
 button.top-dropdown:link,
 button.top-dropdown:visited,
 button.top-dropdown:active {
-  padding: 5px 29px 5px 17px;
+  padding: 5px 29px 6px 17px;
   background-image: url(../../images/gray-arrow.png);
   background-position: right center;
   background-repeat: no-repeat;
@@ -98,7 +104,7 @@ nav > div {
 
 nav > div {
   float: right;
-  height: 60px;
+  height: 50px;
 }
 
 .open > .top-dropdown-container {
@@ -109,8 +115,8 @@ nav > div {
 
   .hide();
   position: absolute;
-  top: 47px;
-  right: 0;
+  top: 37px;
+  right: 0px;
   z-index: @zindexPopover;
   min-width: 240px;
   @shadow: 0 2px 2px rgba(25, 25, 25, .25);
@@ -122,7 +128,7 @@ nav > div {
       width: 30px;
       height: 20px;
       position: absolute;
-      right: 0;
+      right: 10px;
       background-image: url('../../images/dropdown-arrow.png');
       background-repeat: no-repeat;
       background-position: center -25px;
@@ -157,12 +163,8 @@ nav > div {
         padding: 4px 8px;
         line-height: 24px;
         // border-bottom: 1px solid rgb(220, 220, 220);
-      }
-
-      li:hover {
-        background: @topBarButtonHoverColor;
-        a {
-          color: @white;
+        &:hover {
+          color: @topBarButtonHoverColor;
         }
       }
       // li:last-child a {
@@ -188,11 +190,23 @@ nav > div {
 // Menu customizations
 
 #browse-menu {
+  float: left;
   > button {
+    .border-radius(4px);
     background-color: lighten(@grayDark, 5%);
-    border: none;
-    text-align: left;
+  }
+}
+
+// Institutional block dropdown menu css.
+// Institutional block present when 'Enable institutional scoping' is on.
+#repo-holdings #browse-menu {
+  float: none;
+  width: 100%;
+  > button {
     width: 100%;
+    float: none;
+    .border-radius(4px);
+    background-color: lighten(@grayDark, 5%);
   }
 }
 
@@ -226,7 +240,7 @@ nav > div {
 #add-menu,
 #clipboard-menu {
 
-  @side: 60px;
+  @side: 50px;
 
   // As text is hidden
   cursor: pointer;
@@ -345,36 +359,51 @@ nav > div {
 #search-bar {
   white-space: nowrap;
   position: relative;
-  margin-top: 15px;
   > div {
     // Positionate nested dropdowns
     position: relative;
   }
 }
 
+#search-bar > div {
+  float: left;
+}
+
 #search-bar #search-form-wrapper {
+  padding-bottom: 10px;
+
+  h2 {
+    .hide();
+  }
 
   // Use form to margin top
   // And cancel default margin bottom
   form {
     position: relative; // Positionate search autocomplete
-    margin: 0;
-    width: 100%;
+    margin: 12px 0 0 0;
+    width: 300px;
   }
 
   input {
-    // Reset borders and margin
+
+    // Reset border
     border: none;
-    margin: 0;
-    .border-radius(0) !important;
 
     // See .top-item
     background-color: @grayDark;
+    .border-radius(4px);
     color: lighten(@gray, 40%);
 
     // Overrides defaults for [type=text]
+    // Some of this default like box-model are set by AtoM, not only Bootstrap
     width: 100%;
-    padding: 0 15px;
+    min-height: 0;
+    margin-bottom: 0;
+    // .box-sizing(content-box);
+
+    // Define height (box-model is content-box here)
+    padding: 0 8px;
+    height: 25px;
 
     &:focus {
       background-color: @graySilver;
@@ -384,25 +413,19 @@ nav > div {
 
   }
 
-  button.btn {
-    // position button on far right of search bar
-    position: absolute;
-    top: 0;
-    right: 0;
-
-    // reset some styles
-    padding: initial;
-    background-image: none;
-    
+  button {
     display: block;
-    width: 30px;
-    height: 30px;
-    background-color: lighten(@grayDark, 10%);
+    width: 25px;
+    height: 25px;
+    right: 0px;
+    position: absolute;
+    top: 0px;
+    background-color: #666;
     color: white;
     margin-top: 0px;
     font-size: 1.1em;
     border: none;
-    .border-radius(0);
+    .border-radius(0 4px 4px 0);
 
     &:before {
       font-family: FontAwesome;
@@ -419,12 +442,65 @@ nav > div {
 
 @media (min-width: 1200px) { }
 
-@media (max-width: 979px) { }
+@media (max-width: 979px) {
+
+  // Hide buttons
+  nav {
+    clear: both;
+  }
+
+  // Fist row: logo
+  #logo {
+    float: none;
+    text-align: center;
+  }
+
+  // Second row: search bar
+  #search-bar {
+
+    .clearfix();
+    margin: 0 auto;
+    padding: 0 20px;
+    clear: both;
+
+    #search-form-wrapper {
+      width: 80%;
+      float: left;
+      form {
+        width: auto;
+        margin-right: 0;
+      }
+      input {
+        .input-block-level();
+        min-height: 25px;
+      }
+    }
+
+    #browse-menu {
+      width: 20%;
+      > a {
+        .box-sizing(border-box);
+        width: 100%;
+        margin-right: 0px;
+        float: left;
+      }
+    }
+
+  }
+
+}
 
 @media (max-width: 767px) {
 
   #top-bar {
     margin: 0 -20px;
+    height: auto;
+  }
+
+  #site-name {
+    float: none;
+    text-align: center;
+    margin-top: 0;
   }
 
   #site-slogan {
@@ -432,9 +508,50 @@ nav > div {
     padding: 0 20px;
   }
 
-  #search-form-wrapper {
-    margin-top: 5px;
+  #wrapper {
+    background-image: none;
   }
+
+  nav {
+    .top-dropdown-container {
+      right: auto;
+      left: 0;
+      .arrow {
+        right: auto;
+        left: 10px;
+      }
+    }
+  }
+
 }
 
-@media (max-width: 480px) { }
+@media (max-width: 480px) {
+
+  #browse-menu {
+    width: 3%;
+    &> a {
+      text-indent: -9999px;
+    }
+  }
+
+  nav {
+    clear: both;
+  }
+
+  #search-bar {
+    margin-bottom: 10px;
+  }
+
+  nav > div {
+    &.open {
+      float: none;
+      clear: both;
+    }
+    .top-dropdown-container {
+      clear: both;
+      float: none;
+      left: 0; right: 0;
+    }
+  }
+
+}

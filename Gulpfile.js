@@ -5,13 +5,13 @@ var gulp =  require('gulp'),
 gulp.task('default', ['compile-less']);
 
 gulp.task('watch', function () {
-    watch('./css/less/*.less', function () {
-        gulp.start('compile-less');
-    });
+  watch('./css/less/*.less', function (files) {
+    gulp.start('compile-less');
+  });
 });
 
 gulp.task('compile-less', function () {
-    gulp.src('./css/main.less')
+  gulp.src('./css/main.less')
     .pipe(less({ relativeUrls: true }))
     .pipe(gulp.dest('./css'));
 });
