@@ -1,18 +1,19 @@
-<div id="search-form-wrapper">
+<div id="search-form-wrapper" role="search">
+
+  <h2><?php echo __('Search') ?></h2>
 
   <form action="<?php echo url_for(array('module' => 'informationobject', 'action' => 'browse')) ?>" data-autocomplete="<?php echo url_for(array('module' => 'search', 'action' => 'autocomplete')) ?>" autocomplete="off">
 
     <input type="hidden" name="topLod" value="0"/>
+    <input type="hidden" name="sort" value="relevance"/>
 
-    <?php if (isset($repository)): ?>
-      <input type="text" name="query"<?php if (isset($sf_request->query)) echo ' class="focused"' ?> value="<?php echo $sf_request->query ?>" placeholder="<?php echo __('Search %1%', array('%1%' => render_title($repository))) ?>"/>
+    <?php if (isset($repository) && !sfConfig::get('app_enable_institutional_scoping')): ?>
+      <input type="text" name="query"<?php if (isset($sf_request->query)) echo ' class="focused"' ?> value="<?php echo $sf_request->query ?>" placeholder="<?php echo __('Search %1%', array('%1%' => strip_markdown($repository))) ?>"/>
     <?php else: ?>
-      <input type="text" name="query"<?php if (isset($sf_request->query)) echo ' class="focused"' ?> value="<?php echo $sf_request->query ?>" placeholder="<?php echo __('Search') ?>"/>
+      <input type="text" name="query"<?php if (isset($sf_request->query)) echo ' class="focused"' ?> value="<?php if (!$sf_user->getAttribute('search-realm') || !sfConfig::get('app_enable_institutional_scoping')) echo $sf_request->query ?>" placeholder="<?php echo __('%1%', array('%1%' => sfConfig::get('app_ui_label_globalSearch'))) ?>"/>
     <?php endif; ?>
 
-    <button class="btn">
-      <span class="caret"></span>
-    </button>
+    <button><span><?php echo __('Search') ?></span></button>
 
     <div id="search-realm" class="search-popover">
 
@@ -32,7 +33,7 @@
         <?php if (isset($repository)): ?>
           <div>
             <label>
-              <input name="repos" checked="checked" type="radio" value="<?php echo $repository->id ?>"/>
+              <input name="repos" checked="checked" type="radio" value="<?php echo $repository->id ?>" data-placeholder="<?php echo __('Search %1%', array('%1%' => strip_markdown($repository))) ?>"/>
               <?php echo __('Search <span>%1%</span>', array('%1%' => render_title($repository))) ?>
             </label>
           </div>
@@ -41,7 +42,7 @@
         <?php if (isset($altRepository)): ?>
           <div>
             <label>
-              <input name="repos" type="radio" value="<?php echo $altRepository->id ?>"/>
+              <input name="repos" type="radio" value="<?php echo $altRepository->id ?>" data-placeholder="<?php echo __('Search %1%', array('%1%' => strip_markdown($altRepository))) ?>"/>
               <?php echo __('Search <span>%1%</span>', array('%1%' => render_title($altRepository))) ?>
             </label>
           </div>
@@ -49,21 +50,14 @@
 
       <?php endif; ?>
 
-      <?php /* Rather than have the link pop up when search box is pressed, have it just show by default
-      <div class="search-realm-advanced">
-        <a href="<?php echo url_for(array('module' => 'informationobject', 'action' => 'browse', 'showAdvanced' => true, 'topLod' => false)) ?>">
-          <?php echo __('Advanced search') ?>&nbsp;&raquo;
-        </a>
-      </div>
-      */ ?>
-
     </div>
 
   </form>
-
-  <p class="advanced-search-link">
+  <?php /* Rather than have the link pop up when search box is pressed, have it just show by default */ ?>
+  <div class="search-realm-advanced">
     <a href="<?php echo url_for(array('module' => 'informationobject', 'action' => 'browse', 'showAdvanced' => true, 'topLod' => false)) ?>">
-      <?php echo __('Advanced search') ?>
+      <?php echo __('Advanced search') ?>&nbsp;&raquo;
     </a>
-  </p>
+  </div>
+
 </div>
