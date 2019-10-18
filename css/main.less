@@ -44,7 +44,7 @@
  * there are some limitations: 1) less @variables can't be overriden, 2) for
  * some reason responsive.less imports the vendor variables.less again
  */
-@import "../vendor/bootstrap/less/reset.less";
+@import "../../../vendor/bootstrap/less/reset.less";
 @import "less/variables.less";
 @import "less/loader-bootstrap.less";
 @import "less/loader-yui.less";
@@ -65,11 +65,12 @@
 @import "less/legacy.less";
 @import "less/jobs.less";
 @import "less/bootstrap-mod.less";
+@import "less/panels.less";
 
 // Include RULA customizations
-@import "less/RULA/home.less";
+@import "less/RULA/scaffolding.less";
+@import "less/RULA/header.less";
 @import "less/RULA/popular-this-week.less";
-@import "less/RULA/search-box.less";
 
 // Print rules last
 @import "less/print.less";

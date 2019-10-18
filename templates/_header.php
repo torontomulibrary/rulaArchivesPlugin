@@ -1,15 +1,17 @@
 <?php echo get_component('default', 'updateCheck') ?>
 
+<?php echo get_component('default', 'privacyMessage') ?>
+
 <?php if ($sf_user->isAdministrator() && (string)QubitSetting::getByName('siteBaseUrl') === ''): ?>
-  <div id="update-check">
-    <?php echo link_to('Please configure your site base URL', 'settings/siteInformation', array('rel' => 'home', 'title' => __('Home'))) ?>
+  <div class="site-warning">
+    <?php echo link_to(__('Please configure your site base URL'), 'settings/siteInformation', array('rel' => 'home', 'title' => __('Home'))) ?>
   </div>
 <?php endif; ?>
 
 <header id="top-bar">
 
   <?php if (sfConfig::get('app_toggleLogo')): ?>
-    <?php echo link_to(image_tag('/plugins/rulaArchivesPlugin/images/logo.png', array('alt' => 'Ryerson University Library & Archives')), 'https://library.ryerson.ca', array('id' => 'logo', 'rel' => 'home')) ?>
+  <?php echo link_to(image_tag('/plugins/rulaArchivesPlugin/images/logo.png', array('alt' => 'Ryerson University Library')), 'https://library.ryerson.ca', array('id' => 'logo', 'rel' => 'home')) ?>
   <?php endif; ?>
 
   <?php if (sfConfig::get('app_toggleTitle')): ?>
@@ -34,8 +36,6 @@
 
   </nav>
 
-  </section>
-
   <?php echo get_component_slot('header') ?>
 
 </header>
@@ -52,15 +52,13 @@
   </div>
 <?php endif; ?>
 
-<div id="search-bar">
-  <div class="container">
-    <div class="row">
-      <div class="span2">
-        <?php echo get_component('menu', 'browseMenu', array('sf_cache_key' => $sf_user->getCulture().$sf_user->getUserID())) ?>
-      </div>
-      <div class="span10">
-        <?php echo get_component('search', 'box') ?>
-      </div>
+<div id="search-bar" class="container">
+  <div class="row">
+    <div class="span2">
+      <?php echo get_component('menu', 'browseMenu', array('sf_cache_key' => $sf_user->getCulture().$sf_user->getUserID())) ?>
+    </div>
+    <div class="span10">
+      <?php echo get_component('search', 'box') ?>
     </div>
   </div>
 </div>

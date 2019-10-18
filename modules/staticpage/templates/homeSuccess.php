@@ -5,6 +5,7 @@
 <?php end_slot() ?>
 
 <?php slot('sidebar') ?>
+
   <?php echo get_component('menu', 'staticPagesMenu') ?>
 
   <?php /* <section>
@@ -20,9 +21,12 @@
   </section> */ ?>
 
   <?php echo get_component('default', 'popular', array('limit' => 10, 'sf_cache_key' => $sf_user->getCulture())) ?>
+
 <?php end_slot() ?>
 
-<?php echo render_value($sf_data->getRaw('content')) ?>
+<div class="page">
+  <?php echo render_value_html($sf_data->getRaw('content')) ?>
+</div>
 
 <?php if (QubitAcl::check($resource, 'update')): ?>
   <?php slot('after-content') ?>

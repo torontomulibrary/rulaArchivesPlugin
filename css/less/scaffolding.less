@@ -15,17 +15,22 @@
  * along with Access to Memory (AtoM).  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#wrapper {
+  background-image: url('../../images/separator.png');
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
 footer {
   min-height: 40px;
 }
 
-#wrapper {
-  // padding-top: 10px;
-  margin-top: -10px;
-}
-
 .page {
   margin: 20px;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 // Installer
@@ -162,17 +167,6 @@ th {
 
   font-size: 12px;
 
-  // Icons
-  i {
-    font-size: 14px;
-    color: @grayLight;
-    margin-right: 4px;
-  }
-
-  a:hover i {
-    color: @orange;
-  }
-
   ul {
     margin: 0;
     list-style: none;
@@ -189,14 +183,35 @@ th {
     margin-top: -2px;
   }
 
-  a {
+  // Icons
+  a:not(.btn) {
+    color: @blue;
     display: block;
     padding: 2px 4px;
+
+    i {
+      font-size: 14px;
+      color: @grayLight;
+      margin-right: 4px;
+    }
+
     &:hover {
       background-color: @grayLighter;
+
+      i {
+        color: @orange;
+      }
     }
   }
 
+  a.btn {
+    margin-top: 5px;
+    font-size: 12px;
+
+    i {
+      margin-right: 5px;
+    }
+  }
 }
 
 // jQuery Masonry bricks
@@ -212,7 +227,6 @@ th {
   &.centered {
     margin: 0 auto;
   }
-
 }
 
 .masonry-brick {
@@ -221,6 +235,14 @@ th {
 
 .digitalobject .brick {
   width: @brickWidth*1.25;
+}
+
+.browse-content {
+  padding-left: 12px;
+}
+
+.browse-masonry {
+  margin-top: 10px;
 }
 
 .brick {
@@ -307,6 +329,10 @@ table.sticky-header thead th {
   line-height: 20px;
   border-bottom: 1px solid #ddd;
   border-left: 1px solid #ddd;
+}
+
+table.repos-table {
+  margin-top: 20px;
 }
 
 // Fix magin bottom for tables under content div
@@ -465,27 +491,17 @@ div#content > table.table {
   }
 
   li {
+    padding: 2px 32px 2px 4px;
+    .text-overflow();
     position: relative;
 
-    a {
-      display: inline-block;
-      padding: 2px 5px;
-      vertical-align: middle;
-      width: 85%;
-      .text-overflow();
-
-      > span {
-        position: absolute;
-        left: -10000px;
-        top: auto;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-      }
-    }
-
-    &:hover {
-      background-color: #dfdfdf;
+    a > span {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
     }
   }
 
@@ -496,9 +512,9 @@ div#content > table.table {
 
   // Facet counter
   .facet-count {
-    padding: 2px 5px;
+    padding-left: 4px;
     position: absolute;
-    right: 0;
+    right: 5px;
   }
 
 }
@@ -585,8 +601,11 @@ div#content > table.table {
   }
 
   h2, img {
+    max-width: 220px;
     padding: 8px;
     .box-sizing(border-box);
+    @shadow: 2px 2px 1px rgba(25, 25, 25, .2);
+    .box-shadow(@shadow);
     background-color: @white;
     margin: 0;
   }
@@ -744,17 +763,23 @@ div#content > table.table {
 
   background-color: @white;
   border: 1px solid @borderOutlineColor;
+  .border-radius(4px);
+  .box-shadow(0 1px 1px rgba(0, 0, 0, .2));
 
   // Section title
-  h2 {
-    font-size: @baseFontSize * 1.071428571428571;
-    line-height: 35px;
-    color: #333333;
+  .section > h2,
+  .section > a > h2,
+  .section > span > h2,
+  section > h2,
+  section > a > h2,
+  section > span > h2 {
+    font-size: @baseFontSize * 1.10;
+    line-height: 38px;
+    color: @orange;
     border-top: 1px solid @borderLineColor;
     border-bottom: 1px solid @borderLineColor;
     margin: 0;
-    padding: 0 15px;
-    font-weight: 700;
+    padding: 0 10px;
   }
 
   // Title with link
@@ -1153,7 +1178,7 @@ section .vcard:last-child > .field:last-child > div {
   .creation-details {
     color: @grayLight;
     font-size: @baseFontSize * 0.90;
-    margin-top: -10px !important;
+    margin-top: 10px;
   }
 
   // List of details
@@ -1221,6 +1246,11 @@ section .vcard:last-child > .field:last-child > div {
   margin: 15px 0 10px 0;
   display: inline-block;
   width: 100%;
+  line-height: 30px;
+
+  .btn-group {
+    vertical-align: top;
+  }
 
   > a {
     padding-right: 10px;
@@ -1283,9 +1313,17 @@ section .vcard:last-child > .field:last-child > div {
 
 // Sort header
 
+.sort-options {
+  line-height: 30px;
+}
+
+.pickers {
+  float: right;
+}
+
 #sort-header {
 
-  float: right;
+  float: left;
   text-align: right;
 
   &.shared {
@@ -1297,6 +1335,8 @@ section .vcard:last-child > .field:last-child > div {
     float: left;
     color: #666;
     margin-right: 6px;
+    margin-left: 6px;
+    line-height: 30px;
   }
 
   // This is the item selected and shown, e.g. "Sort by: [Most recent]"
@@ -1331,7 +1371,7 @@ section .vcard:last-child > .field:last-child > div {
       z-index: 2;
       background: transparent;
       display: none;
-      padding-top: 17px;
+      padding-top: 25px;
     }
 
     li {
@@ -1364,7 +1404,7 @@ section .vcard:last-child > .field:last-child > div {
       right: 0;
       display: block;
       width: 18px;
-      height: 22px;
+      height: 30px;
       background: @white;
       border: 1px solid #ddd;
       border-bottom: 1px solid #fff;
@@ -1485,7 +1525,7 @@ body.login #content {
 
 // Update check
 
-#update-check {
+#update-check, .site-warning {
   background-color: #ff8800;
   color: @black;
   border-bottom: 1px solid @gray;
@@ -1509,6 +1549,37 @@ body.login #content {
   #update-check {
     margin-left: -20px;
     margin-right: -20px;
+  }
+}
+
+// GDPR Privacy Message banner
+@media (max-width: 767px) {
+  #privacy-message {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+}
+
+#privacy-message > .alert {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  text-align: center;
+  padding: 8px 35px 18px 14px;
+
+  #privacy-message-content {
+    margin-left: 45px;
+    margin-right: 65px;
+    color: @blueDark;
+    a:not(.btn) {
+      color: @gray;
+    }
+    a:hover {
+      color: darken(@linkColorHover, 10%);
+    }
+  }
+
+  #privacy-message > .alert > button {
+    position: relative;
   }
 }
 
@@ -1678,6 +1749,12 @@ body.login #content {
   }
 }
 
+// User profile
+
+#editing-history-wrapper {
+  border-top: 1px solid #e5e5e5;
+}
+
 // Settings » Permissions
 
 #premisAccessPermissionsArea {
@@ -1792,4 +1869,10 @@ body.login #content {
   &+ .multiline-header {
     margin-top: 45px;
   }
+}
+
+// Maintain font size in blockquotes
+
+blockquote p {
+  font-size: inherit;
 }

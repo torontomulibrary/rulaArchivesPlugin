@@ -4,6 +4,10 @@
 
   <div class="top-dropdown-container top-dropdown-container-right">
 
+    <div class="top-dropdown-arrow">
+      <div class="arrow"></div>
+    </div>
+
     <div class="top-dropdown-header">
       <h2><?php echo $browseMenu->getLabel(array('cultureFallback' => true)) ?></h2>
     </div>
@@ -13,6 +17,8 @@
         <?php echo QubitMenu::displayHierarchyAsList($browseMenu, 0) ?>
       </ul>
     </div>
+
+    <div class="top-dropdown-bottom"></div>
 
   </div>
 
